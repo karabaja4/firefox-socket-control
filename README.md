@@ -14,7 +14,7 @@ Attached is a Node.js Native App example that opens a socket to receive messages
 
 2. Start Firefox and install the extension.
 
-3. Send a message to the socket:
+3. Send a message to the socket (requires `openbsd-netcat`):
    ```bash
    # new tab (empty)
    printf '%s' 'nt' | nc -U -q0 /tmp/firefox.sock
