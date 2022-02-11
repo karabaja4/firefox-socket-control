@@ -1,0 +1,7 @@
+{
+  "name": "native_control",
+  "description": "Control your Firefox using UNIX sockets.",
+  "path": "/home/igor/git/nativecontrol/app/native_control.js",
+  "type": "stdio",
+  "allowed_extensions": [ "native_control@karabaja4" ]
+}
