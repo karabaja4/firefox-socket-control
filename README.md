@@ -26,5 +26,5 @@ Attached is a Node.js Native App example that opens a UNIX socket to receive mes
    printf '%s' 'nt|www.google.com' | nc -U -q0 /tmp/firefox.sock
 
    # new window (url)
-   printf '%s' 'nt|www.google.com' | nc -U -q0 /tmp/firefox.sock
+   printf '%s' 'nw|www.google.com' | nc -U -q0 /tmp/firefox.sock
    ```
