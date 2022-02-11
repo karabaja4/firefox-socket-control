@@ -2,7 +2,7 @@
 
 Control your Firefox from a Native App.
 
-Attached is a Node.js Native App example that opens a socket to receive messages that are sent Firefox to open New Window or a New Tab with the specified URL.
+Attached is a Node.js Native App example that opens a UNIX socket to receive messages that are forwarded Firefox to open New Window or a New Tab with the specified URL.
 
 ## Installation
 
