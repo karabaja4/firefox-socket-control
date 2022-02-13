@@ -18,12 +18,26 @@ const send = (action, url) => {
   process.stdout.write(msg);
 }
 
+const parse = (input) => {
+  const args = input.split('|');
+  const action = args[0];
+  const urls = args.slice(1);
+  if (urls.length === 0) {
+    send(action, null);
+  } else {
+    for (let i = 0; i < urls.length; i++) {
+      send(action, urls[i]);
+    }
+  }
+}
+
 const main = () => {
   fs.unlink(sock, () => {
     const server = net.createServer((socket) => {
       socket.on('data', (data) => {
-        const input = data.toString().split(/\|(.+)/);
-        send(input[0], input[1]);
+        if (data) {
+          parse(data.toString());
+        }
       });
     });
     process.stdin.on('readable', () => {
