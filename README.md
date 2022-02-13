@@ -42,7 +42,7 @@ The script opens a new Firefox window if no parameters are provided, or opens a 
 firefox-socket-control
 
 # new tabs
-firefox-socket-control https://bbs.archlinux.org https://www.youtube.com
+firefox-socket-control https://archlinux.org/ https://www.youtube.com
 ```
 
 If Firefox instance is not running, a new instance is started. Otherwise, an existing instance is used.
@@ -57,14 +57,14 @@ If Firefox instance is not running, a new instance is started. Otherwise, an exi
    printf '%s' 'nw' | nc -U -q0 /tmp/firefox.sock
 
    # new tab (url)
-   printf '%s' 'nt|https://bbs.archlinux.org|https://youtube.com' | nc -U -q0 /tmp/firefox.sock
+   printf '%s' 'nt|https://archlinux.org/' | nc -U -q0 /tmp/firefox.sock
 
    # new window (url)
-   printf '%s' 'nw|https://bbs.archlinux.org|https://youtube.com' | nc -U -q0 /tmp/firefox.sock
+   printf '%s' 'nw|https://archlinux.org/|https://youtube.com' | nc -U -q0 /tmp/firefox.sock
    ```
    `https://` prefix is optional:
 
    ```bash
    # new tab
-   printf '%s' 'nt|bbs.archlinux.org|youtube.com' | nc -U -q0 /tmp/firefox.sock
+   printf '%s' 'nt|archlinux.org|youtube.com' | nc -U -q0 /tmp/firefox.sock
    ```
