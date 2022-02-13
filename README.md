@@ -20,11 +20,12 @@ There is an [AUR package](https://aur.archlinux.org/packages/firefox-socket-cont
 
 1. Setup an extension and a native app:
    ```bash
+   # fetch the files
    git clone https://github.com/karabaja4/nativecontrol.git
    cd nativecontrol/
    wget https://addons.mozilla.org/firefox/downloads/file/3908096/nativecontrol-1.2-fx.xpi
 
-   # as root
+   # run as root
    install -Dm755 "firefox-socket-control" "/usr/bin/firefox-socket-control"
    install -Dm755 "app/native_control.js" "/usr/lib/mozilla/native-messaging-hosts/native_control.js"
    install -Dm644 "app/native_control.json" "/usr/lib/mozilla/native-messaging-hosts/native_control.json"
@@ -51,6 +52,12 @@ If Firefox instance is not running, a new instance is started. Otherwise, a mess
 
 ### Sending messages to the socket using `nc`:
 
+The socket is created in the following location:
+   ```bash
+   /tmp/firefox.sock
+   ```
+
+   Examples:
    ```bash
    # new tab (empty)
    printf '%s' 'nt' | nc -U -q0 /tmp/firefox.sock
@@ -64,7 +71,7 @@ If Firefox instance is not running, a new instance is started. Otherwise, a mess
    # new window (url)
    printf '%s' 'nw|https://archlinux.org|https://youtube.com' | nc -U -q0 /tmp/firefox.sock
    ```
-   `https://` prefix is optional:
+   `https://` prefix is optional, this will also work:
 
    ```bash
    # new tab (no prefix)
