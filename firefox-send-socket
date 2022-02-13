@@ -8,7 +8,7 @@ then
     then
         printf 'nw' | nc -U -q0 "${_sock}"
     else
-        printf 'nt|%s' "${1}" | nc -U -q0 "${_sock}"
+        printf '%s' "nt$(printf '|%s' "$@")" | nc -U -q0 "${_sock}"
     fi
 else
     exec /usr/lib/firefox/firefox "${@}"
