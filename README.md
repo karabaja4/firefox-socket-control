@@ -35,9 +35,9 @@ There is an [AUR package](https://aur.archlinux.org/packages/firefox-socket-cont
 
 ## Usage
 
-### Using attached `firefox-socket-control` script
+### Using the attached `firefox-socket-control` script
 
-The script opens a new Firefox window if no parameters are provided, or opens a new tab for each URL parameter:
+The script opens a New Window if no parameters are provided, or opens a New Tab for each URL parameter:
 
 ```bash
 # new window
@@ -47,7 +47,7 @@ firefox-socket-control
 firefox-socket-control https://archlinux.org https://www.youtube.com
 ```
 
-If Firefox instance is not running, a new instance is started. Otherwise, a message is sent to a running instance.
+If Firefox instance is not running, a new instance is started. Otherwise, a message is sent to the running instance.
 
 ### Sending messages to the socket using `nc`:
 
