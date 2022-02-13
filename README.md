@@ -2,7 +2,7 @@
 
 Control your Firefox from a Native App.
 
-Attached is a Node.js Native App that opens a UNIX socket to receive messages that are forwarded Firefox to open New Window or a New Tab with the specified URL.
+Attached is a Node.js Native App that opens a UNIX socket which forwards messages to Firefox to open a New Window or a New Tab with the specified URL.
 
 This can replace dbus to allow Firefox to open New Tabs or New Windows using the running instance if dbus is not available on your system.
 
@@ -12,9 +12,11 @@ You need `openbsd-netcat` and `nodejs`.
 
 ## Installation
 
-If you use Arch Linux, there is an [AUR package](https://aur.archlinux.org/packages/firefox-socket-control-git) available.
+### Arch Linux
 
-Otherwise, follow the steps below.
+There is an [AUR package](https://aur.archlinux.org/packages/firefox-socket-control-git) available.
+
+### Other distributions
 
 1. Setup an extension and a native app:
    ```bash
@@ -31,7 +33,7 @@ Otherwise, follow the steps below.
 
 ## Usage
 
-### Using `firefox-socket-control` script
+### Using attached `firefox-socket-control` script
 
 The script opens a new Firefox window if no parameters are provided, or opens a new tab for each URL parameter:
 
@@ -45,7 +47,7 @@ firefox-socket-control https://bbs.archlinux.org https://www.youtube.com
 
 If Firefox instance is not running, a new instance is started. Otherwise, an existing instance is used.
 
-### Sending messages manually to the socket:
+### Sending messages to the socket using `nc`:
 
    ```bash
    # new tab (empty)
@@ -55,8 +57,14 @@ If Firefox instance is not running, a new instance is started. Otherwise, an exi
    printf '%s' 'nw' | nc -U -q0 /tmp/firefox.sock
 
    # new tab (url)
-   printf '%s' 'nt|www.google.com' | nc -U -q0 /tmp/firefox.sock
+   printf '%s' 'nt|https://bbs.archlinux.org|https://youtube.com' | nc -U -q0 /tmp/firefox.sock
 
    # new window (url)
-   printf '%s' 'nw|www.google.com' | nc -U -q0 /tmp/firefox.sock
+   printf '%s' 'nw|https://bbs.archlinux.org|https://youtube.com' | nc -U -q0 /tmp/firefox.sock
+   ```
+   `https://` prefix is optional:
+
+   ```bash
+   # new tab
+   printf '%s' 'nt|bbs.archlinux.org|youtube.com' | nc -U -q0 /tmp/firefox.sock
    ```
