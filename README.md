@@ -2,7 +2,7 @@
 
 Control your Firefox from a Native App.
 
-Attached is a Node.js Native App that opens a UNIX socket which forwards messages to Firefox to open a New Window or a New Tab with the specified URL.
+Attached is a Node.js Native App that opens a UNIX socket which forwards messages to Firefox that request opening a New Window or a New Tab with the specified URL.
 
 This can replace dbus to allow Firefox to open New Tabs or New Windows using the running instance if dbus is not available on your system.
 
@@ -20,6 +20,7 @@ There is an [AUR package](https://aur.archlinux.org/packages/firefox-socket-cont
 
 1. Setup an extension and a native app:
    ```bash
+   git clone https://github.com/karabaja4/nativecontrol.git
    cd nativecontrol/
    install -Dm755 "firefox-socket-control" "/usr/bin/firefox-socket-control"
    install -Dm755 "app/native_control.js" "/usr/lib/mozilla/native-messaging-hosts/native_control.js"
@@ -45,7 +46,7 @@ firefox-socket-control
 firefox-socket-control https://archlinux.org https://www.youtube.com
 ```
 
-If Firefox instance is not running, a new instance is started. Otherwise, an existing instance is used.
+If Firefox instance is not running, a new instance is started. Otherwise, a message is sent to a running instance.
 
 ### Sending messages to the socket using `nc`:
 
