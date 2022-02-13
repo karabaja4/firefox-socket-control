@@ -2,7 +2,7 @@ const port = browser.runtime.connectNative('native_control');
 
 const newtab = (url) => {
   browser.tabs.create({
-    url: (url && !url.match(/^[a-z]+:\/\/.+$/gi)) ? `https://${url}` : url,
+    url: (url && !url.startsWith('https://')) ? `https://${url}` : url,
     active: true,
     discarded: false,
   });
@@ -26,7 +26,7 @@ port.onMessage.addListener((message) => {
 });
 
 browser.browserAction.onClicked.addListener(() => {
-  console.log(`NativeControl 1.0 on ${(new Date()).toISOString()}`);
+  console.log(`NativeControl 1.1 on ${(new Date()).toISOString()}`);
 });
 
 window.addEventListener('unload', () => {
