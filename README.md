@@ -1,8 +1,8 @@
 # NativeControl
 
-Control your Firefox from a Native App.
+Control your Firefox from a Native Messaging App.
 
-Attached is a Node.js Native App that opens a UNIX socket which forwards messages to Firefox that request opening a New Window or a New Tab with the specified URL.
+Attached is a Node.js Native Messaging App that opens a UNIX socket which forwards messages to Firefox that request opening a New Window or a New Tab with the specified URL.
 
 This can replace `dbus` to allow Firefox to open New Tabs or New Windows using the running instance if `dbus` is not available on your system.
 
