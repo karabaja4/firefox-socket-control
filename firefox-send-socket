@@ -1,0 +1,15 @@
+#!/bin/sh
+
+_sock="/tmp/firefox.sock"
+
+if [ -S "${_sock}" ]
+then
+    if [ ${#} -eq 0 ]
+    then
+        printf 'nw' | nc -U -q0 "${_sock}"
+    else
+        printf 'nt|%s' "${1}" | nc -U -q0 "${_sock}"
+    fi
+else
+    exec /usr/lib/firefox/firefox "${@}"
+fi
