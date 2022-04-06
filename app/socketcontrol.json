@@ -3,5 +3,5 @@
   "description": "Control your Firefox using UNIX sockets",
   "path": "/usr/lib/mozilla/native-messaging-hosts/socketcontrol.js",
   "type": "stdio",
-  "allowed_extensions": [ "socketcontrol@karabaja4" ]
+  "allowed_extensions": [ "native_control@karabaja4" ]
 }

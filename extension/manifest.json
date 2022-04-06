@@ -10,7 +10,7 @@
 
   "browser_specific_settings": {
     "gecko": {
-      "id": "socketcontrol@karabaja4",
+      "id": "native_control@karabaja4",
       "strict_min_version": "50.0"
     }
   },
