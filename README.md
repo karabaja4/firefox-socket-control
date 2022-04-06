@@ -23,7 +23,7 @@ There is an [AUR package](https://aur.archlinux.org/packages/firefox-socket-cont
    # fetch the files
    git clone https://github.com/karabaja4/firefox-socket-control.git
    cd firefox-socket-control/
-   wget https://addons.mozilla.org/firefox/downloads/file/3908096/socketcontrol-1.3-fx.xpi
+   wget https://addons.mozilla.org/firefox/downloads/file/3932874/socketcontrol-1.3-fx.xpi
 
    # run as root
    install -Dm755 "firefox-socket-control" "/usr/bin/firefox-socket-control"
