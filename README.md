@@ -27,8 +27,8 @@ There is an [AUR package](https://aur.archlinux.org/packages/firefox-socket-cont
 
    # run as root
    install -Dm755 "firefox-socket-control" "/usr/bin/firefox-socket-control"
-   install -Dm755 "app/socketcontrol.js" "/usr/lib/mozilla/native-messaging-hosts/socketcontrol.js"
-   install -Dm644 "app/socketcontrol.json" "/usr/lib/mozilla/native-messaging-hosts/socketcontrol.json"
+   install -Dm755 "app/socketcontrol.js" "/usr/lib/mozilla/native-messaging-hosts/native_control.js"
+   install -Dm644 "app/socketcontrol.json" "/usr/lib/mozilla/native-messaging-hosts/native_control.json"
    install -Dm644 "socketcontrol-1.3-fx.xpi" "/usr/lib/firefox/browser/extensions/native_control@karabaja4.xpi"
    ```
 

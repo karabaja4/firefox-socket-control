@@ -1,7 +1,7 @@
 {
   "name": "SocketControl",
   "description": "Control your Firefox using UNIX sockets",
-  "path": "/usr/lib/mozilla/native-messaging-hosts/socketcontrol.js",
+  "path": "/usr/lib/mozilla/native-messaging-hosts/native_control.js",
   "type": "stdio",
   "allowed_extensions": [ "native_control@karabaja4" ]
 }

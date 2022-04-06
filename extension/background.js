@@ -1,4 +1,4 @@
-const port = browser.runtime.connectNative('socketcontrol');
+const port = browser.runtime.connectNative('native_control');
 
 const newtab = (url) => {
   browser.tabs.create({
