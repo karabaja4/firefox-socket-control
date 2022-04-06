@@ -1,16 +1,16 @@
 {
 
-  "description": "Control your Firefox from a Native Messaging app.",
+  "description": "Control Firefox from a UNIX socket provided by a Native Messaging App.",
   "manifest_version": 2,
-  "name": "NativeControl",
-  "version": "1.2",
+  "name": "SocketControl",
+  "version": "1.3",
   "icons": {
     "48": "icons/app.svg"
   },
 
   "browser_specific_settings": {
     "gecko": {
-      "id": "native_control@karabaja4",
+      "id": "socketcontrol@karabaja4",
       "strict_min_version": "50.0"
     }
   },

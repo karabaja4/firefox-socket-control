@@ -1,4 +1,4 @@
-const port = browser.runtime.connectNative('native_control');
+const port = browser.runtime.connectNative('socketcontrol');
 
 const newtab = (url) => {
   browser.tabs.create({
@@ -29,7 +29,7 @@ port.onMessage.addListener((message) => {
 });
 
 browser.browserAction.onClicked.addListener(() => {
-  console.log(`NativeControl 1.2 on ${(new Date()).toISOString()}`);
+  console.log(`SocketControl 1.3 on ${(new Date()).toISOString()}`);
 });
 
 window.addEventListener('unload', () => {
