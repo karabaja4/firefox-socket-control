@@ -29,7 +29,7 @@ There is an [AUR package](https://aur.archlinux.org/packages/firefox-socket-cont
    install -Dm755 "firefox-socket-control" "/usr/bin/firefox-socket-control"
    install -Dm755 "app/socketcontrol.js" "/usr/lib/mozilla/native-messaging-hosts/socketcontrol.js"
    install -Dm644 "app/socketcontrol.json" "/usr/lib/mozilla/native-messaging-hosts/socketcontrol.json"
-   install -Dm644 "socketcontrol-1.3-fx.xpi" "/usr/lib/firefox/browser/extensions/socketcontrol-1.3-fx.xpi"
+   install -Dm644 "socketcontrol-1.4-fx.xpi" "/usr/lib/firefox/browser/extensions/native_control@karabaja4.xpi"
    ```
 
 2. Open and close Firefox once. On second opening, the extension will become active.
