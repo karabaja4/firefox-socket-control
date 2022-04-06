@@ -1,6 +1,6 @@
-# NativeControl
+# Firefox Socket Control
 
-Control your Firefox from a Native Messaging App.
+Control your Firefox from a UNIX socket provided by the Native Messaging App.
 
 Attached is a Node.js Native Messaging App that creates a UNIX socket which receives and forwards messages to a Firefox extension [NativeControl](https://addons.mozilla.org/en-US/firefox/addon/nativecontrol/) which then opens a New Tab or a New Window based on contents of the message. Check the **Usage** section for examples.
 
