@@ -1,6 +1,6 @@
 # Firefox Socket Control
 
-Control your Firefox from a UNIX socket provided by the Native Messaging App.
+Control Firefox from a UNIX socket provided by a Native Messaging App.
 
 Attached is a Node.js Native Messaging App that creates a UNIX socket which receives and forwards messages to a Firefox extension [SocketControl](https://addons.mozilla.org/en-US/firefox/addon/socketcontrol/) which then opens a New Tab or a New Window based on contents of the message. Check the **Usage** section for examples.
 
@@ -23,13 +23,13 @@ There is an [AUR package](https://aur.archlinux.org/packages/firefox-socket-cont
    # fetch the files
    git clone https://github.com/karabaja4/firefox-socket-control.git
    cd firefox-socket-control/
-   wget https://addons.mozilla.org/firefox/downloads/file/3932891/socketcontrol-1.4-fx.xpi
+   wget https://addons.mozilla.org/firefox/downloads/file/3933677/socketcontrol-1.5-fx.xpi
 
    # run as root
    install -Dm755 "firefox-socket-control" "/usr/bin/firefox-socket-control"
    install -Dm755 "app/socketcontrol.js" "/usr/lib/mozilla/native-messaging-hosts/socketcontrol.js"
    install -Dm644 "app/socketcontrol.json" "/usr/lib/mozilla/native-messaging-hosts/socketcontrol.json"
-   install -Dm644 "socketcontrol-1.4-fx.xpi" "/usr/lib/firefox/browser/extensions/native_control@karabaja4.xpi"
+   install -Dm644 "socketcontrol-1.5-fx.xpi" "/usr/lib/firefox/browser/extensions/native_control@karabaja4.xpi"
    ```
 
 2. Open and close Firefox once. On second opening, the extension will become active.

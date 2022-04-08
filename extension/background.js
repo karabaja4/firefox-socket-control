@@ -29,7 +29,7 @@ port.onMessage.addListener((message) => {
 });
 
 browser.browserAction.onClicked.addListener(() => {
-  console.log(`SocketControl 1.3 on ${(new Date()).toISOString()}`);
+  console.log(`SocketControl 1.5 on ${(new Date()).toISOString()}`);
 });
 
 window.addEventListener('unload', () => {

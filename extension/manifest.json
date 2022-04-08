@@ -3,7 +3,7 @@
   "description": "Control Firefox from a UNIX socket provided by a Native Messaging App.",
   "manifest_version": 2,
   "name": "SocketControl",
-  "version": "1.4",
+  "version": "1.5",
   "icons": {
     "48": "icons/app.svg"
   },
