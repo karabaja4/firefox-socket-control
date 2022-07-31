@@ -60,20 +60,20 @@ The socket is created in the following location:
    Examples:
    ```bash
    # new tab (empty)
-   printf '%s' 'nt' | nc -U -q0 /tmp/firefox.sock
+   printf '%s' 'nt' | nc -NU /tmp/firefox.sock
 
    # new window (empty)
-   printf '%s' 'nw' | nc -U -q0 /tmp/firefox.sock
+   printf '%s' 'nw' | nc -NU /tmp/firefox.sock
 
    # new tab (url)
-   printf '%s' 'nt|https://archlinux.org' | nc -U -q0 /tmp/firefox.sock
+   printf '%s' 'nt|https://archlinux.org' | nc -NU /tmp/firefox.sock
 
    # new window (url)
-   printf '%s' 'nw|https://archlinux.org|https://youtube.com' | nc -U -q0 /tmp/firefox.sock
+   printf '%s' 'nw|https://archlinux.org|https://youtube.com' | nc -NU /tmp/firefox.sock
    ```
    `https://` prefix is optional, this will also work:
 
    ```bash
    # new tab (no prefix)
-   printf '%s' 'nt|archlinux.org|youtube.com' | nc -U -q0 /tmp/firefox.sock
+   printf '%s' 'nt|archlinux.org|youtube.com' | nc -NU /tmp/firefox.sock
    ```

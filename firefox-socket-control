@@ -6,9 +6,9 @@ if [ -S "${_sock}" ]
 then
     if [ ${#} -eq 0 ]
     then
-        printf 'nw' | nc -U -q0 "${_sock}"
+        printf 'nw' | nc -NU "${_sock}"
     else
-        printf '%s' "nw$(printf '|%s' "${@}")" | nc -U -q0 "${_sock}"
+        printf '%s' "nw$(printf '|%s' "${@}")" | nc -NU "${_sock}"
     fi
 else
     exec /usr/lib/firefox/firefox "${@}"
