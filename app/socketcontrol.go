@@ -21,6 +21,7 @@ type Message struct {
 const SockAddr = "/tmp/firefox.sock"
 
 func serve(c net.Conn) {
+	defer c.Close()
 	tmp := make([]byte, 1024)
 	data := make([]byte, 0)
 	for {
@@ -34,7 +35,6 @@ func serve(c net.Conn) {
 		data = append(data, tmp[:n]...)
 	}
 	parse(string(data))
-	c.Close()
 }
 
 func send(action *string, url *string) {
