@@ -2,13 +2,13 @@
 
 Control Firefox from a UNIX socket provided by a Native Messaging App.
 
-Attached is a Node.js Native Messaging App that creates a UNIX socket which receives and forwards messages to a Firefox extension [SocketControl](https://addons.mozilla.org/en-US/firefox/addon/socketcontrol/) which then opens a New Tab or a New Window based on contents of the message. Check the **Usage** section for examples.
+Attached is a Go Native Messaging App that creates a UNIX socket which receives and forwards messages to a Firefox extension [SocketControl](https://addons.mozilla.org/en-US/firefox/addon/socketcontrol/) which then opens a New Tab or a New Window based on contents of the message. Check the **Usage** section for examples.
 
 This can replace `dbus` to allow Firefox to open a New Tab or New Window in a running instance if `dbus` is not available on your system.
 
 ## Dependencies
 
-You need `openbsd-netcat` and `nodejs`.
+You need `go` (build), `openbsd-netcat`.
 
 ## Installation
 
@@ -24,10 +24,11 @@ There is an [AUR package](https://aur.archlinux.org/packages/firefox-socket-cont
    git clone https://github.com/karabaja4/firefox-socket-control.git
    cd firefox-socket-control/
    wget https://addons.mozilla.org/firefox/downloads/file/3933677/socketcontrol-1.5-fx.xpi
+   go build -trimpath -o "app/socketcontrol" "app/socketcontrol.go"
 
    # run as root
    install -Dm755 "firefox-socket-control" "/usr/bin/firefox-socket-control"
-   install -Dm755 "app/socketcontrol.js" "/usr/lib/mozilla/native-messaging-hosts/socketcontrol.js"
+   install -Dm755 "app/socketcontrol" "/usr/lib/mozilla/native-messaging-hosts/socketcontrol"
    install -Dm644 "app/socketcontrol.json" "/usr/lib/mozilla/native-messaging-hosts/socketcontrol.json"
    install -Dm644 "socketcontrol-1.5-fx.xpi" "/usr/lib/firefox/browser/extensions/native_control@karabaja4.xpi"
    ```
