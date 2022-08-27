@@ -75,6 +75,7 @@ func main() {
 
 	defer l.Close()
 
+	// this goroutine exists before above defer
 	go func() {
 		for {
 			conn, err := l.Accept()
