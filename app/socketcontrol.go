@@ -95,8 +95,8 @@ func main() {
 	}()
 
 	go func() {
-		reader := bufio.NewReader(os.Stdin)
-		reader.ReadString('\n')
+		scanner := bufio.NewScanner(os.Stdin)
+		scanner.Scan()
 		done <- true
 	}()
 
