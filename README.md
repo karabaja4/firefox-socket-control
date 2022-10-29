@@ -54,7 +54,7 @@ There is an [AUR package](https://aur.archlinux.org/packages/firefox-socket-cont
 
 ### Using the attached `firefox-socket` script
 
-The script opens a new window for each if the parameters:
+The script opens a new window for each of the parameters:
 
 ```bash
 # new window (empty)
