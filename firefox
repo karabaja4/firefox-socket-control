@@ -11,7 +11,7 @@ then
         printf '%s' "nw$(printf '|%s' "${@}")" | nc -NU "${_sock}"
     fi
 else
-    if ! pgrep -x 'firefox' > /dev/null
+    if ! pgrep -f '/usr/lib/firefox/firefox' > /dev/null
     then
         exec /usr/lib/firefox/firefox "${@}"
     fi
