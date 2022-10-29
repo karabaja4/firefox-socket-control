@@ -1,6 +1,6 @@
 # Firefox Socket Control
 
-Control Firefox from a UNIX socket provided by a Native Messaging App.
+Control Firefox from a UNIX socket.
 
 Attached is a Go Native Messaging App that creates a UNIX socket which receives and forwards messages to a Firefox extension [SocketControl](https://addons.mozilla.org/en-US/firefox/addon/socketcontrol/) which then opens a New Tab or a New Window based on contents of the message. Check the **Usage** section for examples.
 
