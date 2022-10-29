@@ -72,7 +72,7 @@ The socket is created in the following location:
    ```bash
    /tmp/firefox.sock
    ```
-   You can use this socket to open new windows or new tabs by on the running Firefox instance. Examples:
+   You can use this socket to open new windows or new tabs on the running Firefox instance. Examples:
    ```bash
    # new tab (empty)
    printf '%s' 'nt' | nc -NU /tmp/firefox.sock
