@@ -18,10 +18,11 @@ There is an [AUR package](https://aur.archlinux.org/packages/firefox-socket-cont
 
 ### Other distributions
 
-1. Clone the files and move into the directory:
+1. Clone the repository, change directory and download the extension inside the directory:
    ```bash
    git clone https://github.com/karabaja4/firefox-socket-control.git
    cd firefox-socket-control/
+   wget https://addons.mozilla.org/firefox/downloads/file/3933677/socketcontrol-1.5-fx.xpi
    ```
 
 2. Build the native (Go) application:
@@ -38,9 +39,8 @@ There is an [AUR package](https://aur.archlinux.org/packages/firefox-socket-cont
 
 3. Install the extension:
 
-   If Firefox was built with `--allow-addon-sideload`, you can install the extension directly in the filesystem:
+   If Firefox was built with `--allow-addon-sideload`, you can install the extension directly in the filesystem (as root):
    ```bash
-   wget https://addons.mozilla.org/firefox/downloads/file/3933677/socketcontrol-1.5-fx.xpi
    install -Dm644 "socketcontrol-1.5-fx.xpi" "/usr/lib/firefox/browser/extensions/native_control@karabaja4.xpi"
    ```
    Restart Firefox once to enable the extension.
