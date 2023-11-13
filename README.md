@@ -33,6 +33,7 @@ There is an [AUR package](https://aur.archlinux.org/packages/firefox-socket-cont
 2. Install the native application (as root):
    ```bash
    install -Dm755 "firefox-socket" "/usr/bin/firefox-socket"
+   mkdir -p "/usr/lib/mozilla/native-messaging-hosts"
    install -Dm755 "app/socketcontrol" "/usr/lib/mozilla/native-messaging-hosts/socketcontrol"
    install -Dm644 "app/socketcontrol.json" "/usr/lib/mozilla/native-messaging-hosts/socketcontrol.json"
    ```
